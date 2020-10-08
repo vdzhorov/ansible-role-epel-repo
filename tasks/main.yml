@@ -1,13 +1,7 @@
 ---
-
-- name: Install Epel repository (CentOS 6)
+- name: Install Epel repository
   yum:
-    name: 'https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm'
+    name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-{{ ansible_distribution_major_version }}.noarch.rpm"
     state: installed
-  when: ansible_distribution == 'CentOS' and ansible_distribution_major_version == '6'
-
-- name: Install Epel repository (CentOS 7)
-  yum:
-    name: 'https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm'
-    state: installed
-  when: ansible_distribution == 'CentOS' and ansible_distribution_major_version == '7'
+  when: ansible_distribution == "CentOS" or ansible_distribution == "RedHat"
+...
