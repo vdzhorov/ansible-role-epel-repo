@@ -4,6 +4,7 @@ dependencies: []
 
 galaxy_info:
   author: vdzhorov
+  role_name: epel-repo
   description: Simple role for installing EPEL repository
   company: "Delta.BG"
   license: "license (MIT)"
